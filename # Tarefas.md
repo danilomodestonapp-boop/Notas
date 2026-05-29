@@ -2,16 +2,9 @@
 # Tarefas
 
 ## Urgente / Alta
-- [x] ~~PARAMETRIZAR TS PARA OCULTAR TÍTULOS - TEAMS CIDO~~
-- [x] ~~GERAR TESTE PARA VGR MMD~~
 - [ ] RIC PARA EMPRESA VOLMED
-- [x] ~~MLG - ASSIS AJUSTAR ACESSO VS|SALES - META DASHBOARD~~
-- [x] PREPARAR TREINAMENTO Y01
-- [x] ~~TESTAR VS|SALES CNPJ~~
-- [ ] **MMD LIGAR PARA PATRICIA E TESTAR O QUE VGR PEDIU**
 - [ ] **ENVIAR E-MAIL PARA BGP DAS ALTERAÇÕES**
 - [ ] **REVISAR E ABRIR SOLICITAÇÕES PMM**
-- [x] **ATUALIZAR EXE DA LPK**
   
 
 ## Prioridade Média
@@ -26,7 +19,6 @@
 - [ ] IMPLANTAÇÃO PCP A LABORPACK + WMS
 
 ## Planejamento / Acompanhamento
-- [ ] PREPARAR TREINAMENTO PMM
 - [ ] AAF - ALUMIART / LAMIPLAS: verificar rotinas e viabilizar visita presencial
   - [ ] Confirmar com Matheus Costa e Naion
   - [ ] Solicitar confirmação Betinho
@@ -34,3 +26,4 @@
 ## Observações
 - Reavalie a prioridade assim que obter prazos ou respostas.
 - Marque como concluído com `- [x]` quando terminar a tarefa. 
+- 

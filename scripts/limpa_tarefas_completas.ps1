@@ -3,12 +3,37 @@ param(
 )
 
 $filePath = Resolve-Path -LiteralPath $FilePath
-$content = Get-Content -LiteralPath $filePath
-$filtered = $content | Where-Object { -not ($_ -match '^\s*-\s*\[(x|X)\]\s+') }
+$archivePath = Join-Path (Split-Path -Parent $filePath) "tarefas-concluidas.md"
 
-if ($filtered.Count -ne $content.Count) {
-    $filtered | Set-Content -LiteralPath $filePath
-    Write-Host "Removidas $($content.Count - $filtered.Count) tarefas concluídas."
+$content = Get-Content -LiteralPath $filePath
+$completed = @()
+$remaining = @()
+
+foreach ($line in $content) {
+    if ($line -match '^\s*-\s*\[(x|X)\]\s+') {
+        $completed += $line
+    } else {
+        $remaining += $line
+    }
+}
+
+if ($completed.Count -gt 0) {
+    if (-not (Test-Path -LiteralPath $archivePath)) {
+        "# Tarefas Concluídas" | Set-Content -LiteralPath $archivePath
+    }
+
+    $dateHeader = "### Concluídas em $(Get-Date -Format 'yyyy-MM-dd')"
+    $archiveContent = Get-Content -LiteralPath $archivePath
+
+    if ($archiveContent -contains $dateHeader) {
+        Add-Content -LiteralPath $archivePath -Value $completed
+    } else {
+        Add-Content -LiteralPath $archivePath -Value "`n$dateHeader"
+        Add-Content -LiteralPath $archivePath -Value $completed
+    }
+
+    $remaining | Set-Content -LiteralPath $filePath
+    Write-Host "Arquivadas $($completed.Count) tarefas concluídas em '$archivePath' no grupo '$dateHeader'."
 } else {
-    Write-Host "Nenhuma tarefa concluída para remover."
+    Write-Host "Nenhuma tarefa concluída para arquivar."
 }
