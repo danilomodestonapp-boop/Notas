@@ -10,7 +10,7 @@ $completed = @()
 $remaining = @()
 
 foreach ($line in $content) {
-    if ($line -match '^\s*-\s*\[(x|X)\]\s+') {
+    if ($line -match '^\s*-\s*\[(?:x|X)\]\s*') {
         $completed += $line
     } else {
         $remaining += $line
