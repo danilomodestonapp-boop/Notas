@@ -26,10 +26,27 @@ if ($completed.Count -gt 0) {
     $archiveContent = Get-Content -LiteralPath $archivePath
 
     if ($archiveContent -contains $dateHeader) {
-        Add-Content -LiteralPath $archivePath -Value $completed
+        $startIndex = [Array]::IndexOf($archiveContent, $dateHeader)
+        $existing = @()
+        for ($i = $startIndex + 1; $i -lt $archiveContent.Count; $i++) {
+            if ($archiveContent[$i] -like '### Concluídas em *') {
+                break
+            }
+            if (-not [string]::IsNullOrWhiteSpace($archiveContent[$i])) {
+                $existing += $archiveContent[$i]
+            }
+        }
+        $toAdd = $completed | Where-Object { -not ($existing -contains $_) }
+        if ($toAdd.Count -gt 0) {
+            Add-Content -LiteralPath $archivePath -Value $toAdd
+            Write-Host "Arquivadas $($toAdd.Count) tarefas concluídas em '$archivePath' no grupo '$dateHeader'."
+        } else {
+            Write-Host "Nenhuma tarefa nova para arquivar em '$dateHeader'." -ForegroundColor Yellow
+        }
     } else {
         Add-Content -LiteralPath $archivePath -Value "`n$dateHeader"
         Add-Content -LiteralPath $archivePath -Value $completed
+        Write-Host "Arquivadas $($completed.Count) tarefas concluídas em '$archivePath' no grupo '$dateHeader'."
     }
 
     $remaining | Set-Content -LiteralPath $filePath
