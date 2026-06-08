@@ -2,8 +2,8 @@
 RESUMO DE TAREFAS REALIZADAS - 04 DE JUNHO DE 2026
 ================================================================================
 
-PERÍODO: 04 de Junho de 2026
-TOTAL DE TAREFAS: 10 concluídas
+PERÍODO: 01 a 03 de Junho de 2026
+TOTAL DE TAREFAS: 11 concluídas
 
 ================================================================================
 DETALHAMENTO DAS TAREFAS
@@ -39,18 +39,23 @@ DETALHAMENTO DAS TAREFAS
 10. PARAMETRIZAÇÃO - DTX
     Alteração de parâmetro da empresa DTX para implementar busca inteligente de CNPJ.
 
+11. VISITA A EMPRESA BGP
+    Treinamento da Rotina de Transferência de estoque entre empresas, consultoria geral financeira
+    e alinhamento do processo e rotina de vendas
+
 ================================================================================
 RESUMO EXECUTIVO
 ================================================================================
 
-Foram realizadas 10 tarefas neste período, compreendendo:
+Foram realizadas 11 tarefas neste período, compreendendo:
 • 2 Parametrizações de sistema
 • 2 Testes e validações técnicas
 • 2 Acessos e configurações de sistemas
 • 1 Preparação de treinamento
 • 1 Suporte técnico externo
 • 1 Comunicação interna
-• 1 Atualização de software
+• 1 Atualização de software + Visita Presencial Treinamento
+
 
 Todas as tarefas foram concluídas conforme planejado.
 
