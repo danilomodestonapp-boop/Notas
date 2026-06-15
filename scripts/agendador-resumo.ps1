@@ -23,7 +23,7 @@ while ($true) {
         Write-Host "[$(Get-Date -Format 'HH:mm:ss')] Gerando resumo para $data..." -ForegroundColor Green
         & $resumoScript -Date $data
         
-        Write-Host "[$(Get-Date -Format 'HH:mm:ss')] Resumo salvo em: resumo-tarefas-$data.txt" -ForegroundColor Green
+        Write-Host "[$(Get-Date -Format 'HH:mm:ss')] Resumo salvo em: resumo-tarefas-$data.md" -ForegroundColor Green
         Write-Host ""
         
         Start-Sleep -Seconds 61

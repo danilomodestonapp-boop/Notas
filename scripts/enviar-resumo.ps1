@@ -13,7 +13,7 @@ $scriptPath = if ($PSScriptRoot) { $PSScriptRoot } else { (Get-Location).Path }
 $pastaRaiz = Split-Path -Parent $scriptPath
 
 if (-not $ResumoPorEmail) {
-    $ResumoPorEmail = Join-Path $pastaRaiz "resumo-tarefas-$Data.txt"
+    $ResumoPorEmail = Join-Path $pastaRaiz "resumo-tarefas-$Data.md"
 }
 
 if (-not (Test-Path -LiteralPath $ResumoPorEmail)) {

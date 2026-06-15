@@ -58,6 +58,15 @@ powershell -NoProfile -File ".\scripts\resumo-tarefas.ps1" -Date "2026-06-02"
 
 Gera: `resumo-tarefas-2026-06-02.txt`
 
+### Limpar tarefas concluídas e gerar relatório
+
+```powershell
+cd "C:\Users\dmo\Desktop\Notas"
+powershell -NoProfile -File ".\scripts\gerar-relatorio-e-limpar.ps1"
+```
+
+Isso arquiva as tarefas marcadas como `- [x]` em `tarefas-concluidas.md` e gera o relatório de hoje.
+
 ### Enviar E-mail Manual
 
 ```powershell
